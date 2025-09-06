@@ -27,13 +27,13 @@
     </style>
   </head>
 
-  <body style="background-color: rgb(226, 217, 227)">
+  <body style="background-color: rgb(184, 184, 184)">
     <h1>ChatRoom</h1>
     <% data.forEach(element=> { %>
     <div>
-      <h4><%= element.userName %></h4>
-
-      <p><%= element.userMessage %></p>
+      <p>
+        <strong><%= element.userName %>: </strong><%= element.userMessage %>
+      </p>
     </div>
 
     <% }) %>
