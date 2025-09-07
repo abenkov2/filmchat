@@ -22,27 +22,87 @@
 
       div {
         font-family: Helvetica;
+        border: none;
+        background-color: rgb(197, 197, 197);
+        margin: 20px;
+        padding: 15px;
+        border-radius: 15px;
+      }
+
+      .message_container {
         border: 2px solid #0d0d0c;
+        background-color: rgb(184, 184, 184);
+      }
+
+      /* input[name='userMessage'] {
+        width: 500px;
+        height: 400px;
+      } */
+
+      /* input[type='text'],
+      select {
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #090909;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+      } */
+      .message-row input[type='text'] {
+        flex: 1;
+        padding: 12px 20px;
+        margin-bottom: 500px;
+        border: 1px solid #090909;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+      }
+
+      .message-row button {
+        padding: 12px 20px;
+        background-color: #090909;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[name='userName'],
+      select {
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #090909;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
       }
     </style>
   </head>
 
   <body style="background-color: rgb(184, 184, 184)">
     <h1>ChatRoom</h1>
-    <% data.forEach(element=> { %>
-    <div>
-      <p>
-        <strong><%= element.userName %>: </strong><%= element.userMessage %>
-      </p>
-    </div>
+    <div class="message_container">
+      <% data.forEach(element=> { %>
+      <div>
+        <p>
+          <strong><%= element.userName %>: </strong><%= element.userMessage %>
+        </p>
+      </div>
 
-    <% }) %>
+      <% }) %>
+    </div>
 
     <h1>Add Message</h1>
 
     <form action="/" method="post">
+      <div class="message-row">
+        <input type="text" placeholder="Message" name="userMessage" />
+        <button type="submit">Send</button>
+      </div>
       <input type="text" placeholder="User Name" name="userName" />
-      <input type="text" placeholder="Message" name="userMessage" />
       <button type="submit">Send</button>
     </form>
   </body>
