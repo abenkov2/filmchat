@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ChatRoom</title>
+    <title>Dungeon Messages</title>
 
     <style>
-      h1,
+      h1 {
+        font-family: 'Stencil Std', fantasy;
+      }
+
       h2,
       h3,
       h4,
@@ -30,26 +33,9 @@
       }
 
       .message_container {
-        border: 2px solid #0d0d0c;
         background-color: rgb(184, 184, 184);
       }
 
-      /* input[name='userMessage'] {
-        width: 500px;
-        height: 400px;
-      } */
-
-      /* input[type='text'],
-      select {
-        width: 30%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: block;
-        border: 1px solid #090909;
-        border-radius: 4px;
-        box-sizing: border-box;
-        background-color: #fff;
-      } */
       .message-row input[type='text'] {
         flex: 1;
         padding: 12px 20px;
@@ -82,8 +68,8 @@
     </style>
   </head>
 
-  <body style="background-color: rgb(184, 184, 184)">
-    <h1>ChatRoom</h1>
+  <body style="background-color: #f1f1f1">
+    <h1>Dungeon Messages</h1>
     <div class="message_container">
       <% data.forEach(element=> { %>
       <div>

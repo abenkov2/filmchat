@@ -1,15 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const users = [
-  {
-    userMessage: 'Hi',
-    userName: 'Char One',
-  },
-  {
-    userMessage: 'Hello',
-    userName: 'Char Two',
-  },
-];
+const users = [];
 
 const app = express();
 
