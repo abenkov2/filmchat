@@ -39,6 +39,8 @@
       .message-row input[type='text'] {
         flex: 1;
         padding: 12px 20px;
+        width: 40rem;
+        height: 30rem;
         margin-bottom: 500px;
         border: 1px solid #090909;
         border-radius: 4px;
@@ -57,13 +59,25 @@
       input[name='userName'],
       select {
         width: 30%;
-        padding: 12px 20px;
+        padding: 0px 20px;
         margin: 8px 0;
         display: block;
         border: 1px solid #090909;
         border-radius: 4px;
         box-sizing: border-box;
         background-color: #fff;
+      }
+
+      .message-row textarea {
+        flex: 1;
+        padding: 12px 20px;
+        width: 40rem;
+        height: 10rem;
+        border: 1px solid #090909;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+        resize: both; /* allows vertical and horizontal resizing */
       }
     </style>
   </head>
@@ -74,8 +88,9 @@
       <% data.forEach(element=> { %>
       <div>
         <p>
-          <strong><%= element.userName %>: </strong><%= element.userMessage %>
+          <strong><%= element.userName %>: </strong><pre style="display:inline; white-space:pre-wrap;"><%= element.userMessage %></pre>
         </p>
+
       </div>
 
       <% }) %>
@@ -85,7 +100,7 @@
 
     <form action="/" method="post">
       <div class="message-row">
-        <input type="text" placeholder="Message" name="userMessage" />
+        <textarea placeholder="Message" name="userMessage"></textarea>
         <button type="submit">Send</button>
       </div>
       <input type="text" placeholder="User Name" name="userName" />
